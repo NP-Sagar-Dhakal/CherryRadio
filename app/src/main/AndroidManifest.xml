@@ -34,7 +34,7 @@
         android:theme="@style/MyMaterialTheme">
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.cherryradio.fileprovider"
+            android:authorities="@string/AUTH"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

@@ -24,7 +24,7 @@ def getAvailableLocales() {
 
 android {
 
-    flavorDimensions "one"
+    flavorDimensions "one", "country"
 
     compileSdkVersion 32
     buildToolsVersion '32.0.0'
@@ -102,11 +102,27 @@ android {
         }
     }
     productFlavors {
+        def AUTH = "com.cherryradio"
         play {
             dimension "one"
         }
-        free {
-            dimension "one"
+        bangladesh {
+            dimension "country"
+            resValue "string", "COUNTRY_CODE", "bd"
+            resValue "string", "AUTH", AUTH + ".bangladesh"
+            applicationId AUTH + ".bangladesh"
+        }
+        nepal {
+            dimension "country"
+            resValue "string", "COUNTRY_CODE", "np"
+            resValue "string", "AUTH", AUTH + ".nepal"
+            applicationId AUTH + ".nepal"
+        }
+        india {
+            dimension "country"
+            resValue "string", "COUNTRY_CODE", "in"
+            resValue "string", "AUTH", AUTH + ".india"
+            applicationId AUTH + ".india"
         }
     }
 

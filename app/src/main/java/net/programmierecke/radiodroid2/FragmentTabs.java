@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import net.programmierecke.radiodroid2.BuildConfig;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -116,23 +117,10 @@ public class FragmentTabs extends Fragment implements IFragmentRefreshable, IFra
 
     private void setupViewPager(ViewPager viewPager) {
         Context ctx = getContext();
-        String countryCode = null;
+        String countryCode = getResources().getString(R.string.COUNTRY_CODE);
         if (ctx != null) {
-            TelephonyManager tm = (TelephonyManager) ctx.getSystemService(Context.TELEPHONY_SERVICE);
-            countryCode = tm.getNetworkCountryIso();
-            if (countryCode == null) {
-                countryCode = tm.getSimCountryIso();
-            }
-            if (countryCode != null) {
-                if (countryCode.length() == 2) {
-                    Log.d("MAIN", "Found countrycode " + countryCode);
-                    addresses[IDX_LOCAL] = "json/stations/bycountrycodeexact/" + countryCode + "?order=clickcount&reverse=true";
-                }else{
-                    Log.e("MAIN", "countrycode length != 2");
-                }
-            }else{
-                Log.e("MAIN", "device countrycode and sim countrycode are null");
-            }
+            Log.d("MAIN", "Found countrycode " + countryCode);
+            addresses[IDX_LOCAL] = "json/stations/bycountrycodeexact/" + countryCode + "?order=clickcount&reverse=true";
         }
         fragments[IDX_LOCAL] = new FragmentStations();
         fragments[IDX_TOP_CLICK] = new FragmentStations();

@@ -15,6 +15,17 @@
         android:layout_height="wrap_content" />
 
     <TextView
+        android:autoLink="web"
+        android:text="This is the forked project of RadioDroid. Original source still active you can check it at : https://github.com/segler-alex/RadioDroid."
+        android:layout_width="match_parent"
+        android:textSize="15sp"
+        android:layout_margin="10dp"
+        android:elegantTextHeight="false"
+        android:typeface="normal"
+        android:textIsSelectable="true"
+        android:layout_height="wrap_content" />
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autoLink="web|email"

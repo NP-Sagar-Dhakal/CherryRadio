@@ -58,7 +58,7 @@
     <string name="nav_item_settings">Réglages</string>
     <string name="nav_item_alarm">Alarme</string>
 
-    <string name="about_text">Cette application utilise le répertoire libre de stations radios à l\'adresse\nhttps://www.radio-browser.info\nChacun peut y ajouter des stations ou éditer celles déjà existantes. Ce répertoire fonctionne comme un wiki pour recenser les stations de webradios (en streaming).\n\nContact :\nsegler_alex@web.de\n\nSystème de suivi de bogues :\nhttps://github.com/segler-alex/RadioDroid/issues\n\nSi vous appréciez cette application et que vous voulez soutenir le développement, n\'hésitez pas à m\'envoyer un mail. Si vous avez de l\'expérience en graphisme, vous êtes le bienvenu pour rendre RadioDroid plus agréable à regarder ;) Je cherche aussi des programmeurs pour résoudre les bogues, et implémenter de nouvelles fonctionnalités !\nLes idées de nouvelles fonctionnalités sont d\'ailleurs toujours les bienvenues!\n\nCette application est un logiciel libre sous licence GNU GPLv3.\nhttps://www.gnu.org/licenses/gpl-3.0.html</string>
+    <string name="about_text">Cette application utilise le répertoire libre de stations radios à l\'adresse\nhttps://www.radio-browser.info\nChacun peut y ajouter des stations ou éditer celles déjà existantes. Ce répertoire fonctionne comme un wiki pour recenser les stations de webradios (en streaming).\n\nContact :\cherrydigital.care@gmail.com\n\nSystème de suivi de bogues :\nhttps://github.com/NP-Sagar-Dhakal/CherryRadio/issues\n\nSi vous appréciez cette application et que vous voulez soutenir le développement, n\'hésitez pas à m\'envoyer un mail. Si vous avez de l\'expérience en graphisme, vous êtes le bienvenu pour rendre RadioDroid plus agréable à regarder ;) Je cherche aussi des programmeurs pour résoudre les bogues, et implémenter de nouvelles fonctionnalités !\nLes idées de nouvelles fonctionnalités sont d\'ailleurs toujours les bienvenues!\n\nCette application est un logiciel libre sous licence GNU GPLv3.\nhttps://www.gnu.org/licenses/gpl-3.0.html</string>
     <string name="about_version">Version : %1$s</string>
     <string name="detail_star">Ajouter aux favoris</string>
     <string name="detail_unstar">Supprimer des favoris</string>
@@ -294,7 +294,7 @@
     <string name="settings_lastfm_api_key_desc">Entrez une clé API pour activer la pochette d\'album dans le lecteur plein écran</string>
     <string name="settings_other">Autre</string>
     <string name="settings_statistics">Statistiques</string>
-    <string name="settings_about">À propos RadioDroid</string>
+    <string name="settings_about">À propos Cherry Radio</string>
 
     <string name="description_btn_skip_to_next">Passer au suivant</string>
     <string name="description_btn_skip_to_previous">Passer au précédent</string>

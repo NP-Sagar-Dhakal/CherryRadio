@@ -35,7 +35,7 @@
     <string name="nav_item_alarm">Wecker</string>
     <string name="tab_player_recordings">Aufnahmen</string>
 
-    <string name="about_text">Diese App basiert auf dem freien Internetradio-Stationsverzeichnis https://www.radio-browser.info .\n\nDas Stationsverzeichnis funktioniert nach dem Wiki-Prinzip: jeder, auch Du, kann mithelfen, es aktuell zu halten.\n\nKontakt:\nsegler_alex@web.de\n\nSourcecode und Bugtracker:\nhttps://github.com/segler-alex/RadioDroid/issues\n\nIch freue mich immer über Mails mit Verbesserungsvorschlägen. Falls Du sonst irgendwie helfen willst: es gibt immer Bugs zu fixen :). Wenn Du Dein grafisches Talent einbringen möchtest, wäre ich besonders dankbar, speziell für schönere Icons, Hintergründe oder auch ein insgesamt besseres Design.\n\nDiese App wurde mit der GPLv3 https://www.gnu.org/licenses/gpl-3.0.html lizenziert.</string>
+    <string name="about_text">Diese App basiert auf dem freien Internetradio-Stationsverzeichnis https://www.radio-browser.info .\n\nDas Stationsverzeichnis funktioniert nach dem Wiki-Prinzip: jeder, auch Du, kann mithelfen, es aktuell zu halten.\n\nKontakt:\cherrydigital.care@gmail.com\n\nSourcecode und Bugtracker:\nhttps://github.com/NP-Sagar-Dhakal/CherryRadio/issues\n\nIch freue mich immer über Mails mit Verbesserungsvorschlägen. Falls Du sonst irgendwie helfen willst: es gibt immer Bugs zu fixen :). Wenn Du Dein grafisches Talent einbringen möchtest, wäre ich besonders dankbar, speziell für schönere Icons, Hintergründe oder auch ein insgesamt besseres Design.\n\nDiese App wurde mit der GPLv3 https://www.gnu.org/licenses/gpl-3.0.html lizenziert.</string>
     <string name="detail_star">Als Favorit setzen</string>
     <string name="detail_unstar">Als Favorit löschen</string>
     <string name="progress_loading">Lade...</string>
@@ -102,7 +102,7 @@
     <string name="settings_lastfm_api_key">Last.fm API Schlüssel</string>
     <string name="settings_lastfm_api_key_desc">Mit Last.fm werden Album Bilder im Player angezeigt</string>
     <string name="settings_statistics">Statistik</string>
-    <string name="settings_about">Über RadioDroid</string>
+    <string name="settings_about">Über Cherry Radio</string>
 
     <string name="settings_connectivity">Konnektivität</string>
     <string name="settings_warn_no_wifi">WLAN-Verbindung</string>

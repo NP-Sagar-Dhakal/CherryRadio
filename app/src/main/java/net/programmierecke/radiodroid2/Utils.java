@@ -427,7 +427,7 @@ public class Utils {
 
     public static boolean useCircularIcons(final Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getBoolean("circular_icons", false);
+        return sharedPref.getBoolean("circular_icons", true);
     }
 
     // Storage Permissions
@@ -496,7 +496,7 @@ public class Utils {
 
     public static boolean bottomNavigationEnabled(Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getBoolean("bottom_navigation", true);
+        return sharedPref.getBoolean("bottom_navigation", false);
     }
 
     public static String formatStringWithNamedArgs(String format, Map<String, String> args) {

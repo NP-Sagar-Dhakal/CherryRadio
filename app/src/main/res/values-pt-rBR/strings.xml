@@ -271,7 +271,7 @@
 
     <string name="media_route_menu_title">GoogleCast</string>
     <string name="app_id">5A97BAE</string>
-    <string name="app_name">RadioDroid</string>
+    <string name="app_name">Cherry Radio</string>
 
     <string name="settings_mpd">Daemon de reprodutor da música</string>
     <string name="settings_mpd_port">MPD porto</string>

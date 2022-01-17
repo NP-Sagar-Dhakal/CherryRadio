@@ -3,6 +3,7 @@ package net.programmierecke.radiodroid2;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.audiofx.AudioEffect;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -64,6 +65,7 @@ public class FragmentSettings extends PreferenceFragmentCompat implements Shared
 
     private void refreshToplevelIcons() {
         findPreference("shareapp_package").setSummary(getPreferenceManager().getSharedPreferences().getString("shareapp_package", ""));
+        findPreference("add_new_station").setIcon(Utils.IconicsIcon(getContext(), GoogleMaterial.Icon.gmd_add));
         findPreference("pref_category_ui").setIcon(Utils.IconicsIcon(getContext(), CommunityMaterial.Icon2.cmd_monitor));
         findPreference("pref_category_startup").setIcon(Utils.IconicsIcon(getContext(), GoogleMaterial.Icon.gmd_flight_takeoff));
         findPreference("pref_category_interaction").setIcon(Utils.IconicsIcon(getContext(), CommunityMaterial.Icon.cmd_gesture_tap));
@@ -107,6 +109,13 @@ public class FragmentSettings extends PreferenceFragmentCompat implements Shared
             SearchConfiguration config = searchPreference.getSearchConfiguration();
             config.setActivity((AppCompatActivity) getActivity());
             config.index(R.xml.preferences);
+            findPreference("add_new_station").setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.radio-browser.info/add")));
+                    return false;
+                }
+            });
         } else if (s.equals("pref_category_player")) {
             findPreference("equalizer").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override

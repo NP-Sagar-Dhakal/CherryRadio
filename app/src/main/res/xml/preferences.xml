@@ -6,6 +6,9 @@
 
     <com.bytehamster.lib.preferencesearch.SearchPreference android:key="searchPreference" />
 
+    <Preference android:title="New Station"
+        android:key="add_new_station"/>
+
     <PreferenceScreen
         android:title="@string/settings_appearance"
         search:ignore="true"

@@ -41,7 +41,7 @@ public class FragmentHistory extends Fragment implements IAdapterRefreshable {
 
     void onStationClick(DataRadioStation theStation) {
         RadioDroidApp radioDroidApp = (RadioDroidApp) getActivity().getApplication();
-        Utils.showPlaySelection(radioDroidApp, theStation, getActivity().getSupportFragmentManager());
+        Utils.showPlaySelection(requireActivity(), radioDroidApp, theStation, getActivity().getSupportFragmentManager());
 
         RefreshListGui();
         rvStations.smoothScrollToPosition(0);

@@ -186,7 +186,7 @@ public class FragmentPlayerSmall extends Fragment {
         }
 
         if (station != null && !PlayerServiceUtil.isPlaying()) {
-            Utils.showPlaySelection(radioDroidApp, station, getActivity().getSupportFragmentManager());
+            Utils.showPlaySelection(requireActivity(), radioDroidApp, station, getActivity().getSupportFragmentManager());
         }
     }
 

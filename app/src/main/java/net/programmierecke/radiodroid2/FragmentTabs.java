@@ -18,6 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
+import net.programmierecke.radiodroid2.adservice.Interstitial_Ad_Service;
 import net.programmierecke.radiodroid2.interfaces.IFragmentRefreshable;
 import net.programmierecke.radiodroid2.interfaces.IFragmentSearchable;
 import net.programmierecke.radiodroid2.station.FragmentStations;
@@ -162,6 +163,23 @@ public class FragmentTabs extends Fragment implements IFragmentRefreshable, IFra
         adapter.addFragment(fragments[IDX_LANGUAGES], R.string.action_languages);
         adapter.addFragment(fragments[IDX_SEARCH], R.string.action_search);
         viewPager.setAdapter(adapter);
+        //just to show interstitial ads
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                Interstitial_Ad_Service.primaryButtonClick();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     public void Search(StationsFilter.SearchStyle searchStyle, final String query) {

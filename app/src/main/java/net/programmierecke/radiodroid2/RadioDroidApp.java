@@ -1,6 +1,7 @@
 package net.programmierecke.radiodroid2;
 
 import android.app.UiModeManager;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import androidx.preference.PreferenceManager;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
+import net.programmierecke.radiodroid2.adservice.LoadInterstitialAd;
 import net.programmierecke.radiodroid2.alarm.RadioAlarmManager;
 import net.programmierecke.radiodroid2.history.TrackHistoryRepository;
 import net.programmierecke.radiodroid2.players.mpd.MPDClient;
@@ -34,6 +36,7 @@ import okhttp3.Response;
 
 public class RadioDroidApp extends MultiDexApplication {
 
+    public static Context context;
     private HistoryManager historyManager;
     private FavouriteManager favouriteManager;
     private RecordingsManager recordingsManager;
@@ -111,6 +114,8 @@ public class RadioDroidApp extends MultiDexApplication {
         trackMetadataSearcher = new TrackMetadataSearcher(httpClient);
 
         recordingsManager.updateRecordingsList();
+        context = getApplicationContext();
+        LoadInterstitialAd.loadInterstitialAd();
     }
 
     public void setTestsInterceptor(Interceptor testsInterceptor) {

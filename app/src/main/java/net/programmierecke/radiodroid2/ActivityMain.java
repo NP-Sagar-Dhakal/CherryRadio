@@ -1,5 +1,8 @@
 package net.programmierecke.radiodroid2;
 
+import static net.programmierecke.radiodroid2.service.MediaSessionCallback.EXTRA_STATION_UUID;
+
+import android.app.Activity;
 import android.app.TimePickerDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -41,6 +44,7 @@ import androidx.preference.PreferenceManager;
 
 import com.bytehamster.lib.preferencesearch.SearchPreferenceResult;
 import com.bytehamster.lib.preferencesearch.SearchPreferenceResultListener;
+import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -51,6 +55,8 @@ import com.rustamg.filedialogs.FileDialog;
 import com.rustamg.filedialogs.OpenFileDialog;
 import com.rustamg.filedialogs.SaveFileDialog;
 
+import net.programmierecke.radiodroid2.adservice.Interstitial_Ad_Service;
+import net.programmierecke.radiodroid2.adservice.Native_Ad_Service;
 import net.programmierecke.radiodroid2.alarm.FragmentAlarm;
 import net.programmierecke.radiodroid2.alarm.TimePickerFragment;
 import net.programmierecke.radiodroid2.cast.CastAwareActivity;
@@ -70,8 +76,6 @@ import java.io.File;
 import java.util.Date;
 
 import okhttp3.OkHttpClient;
-
-import static net.programmierecke.radiodroid2.service.MediaSessionCallback.EXTRA_STATION_UUID;
 
 public class ActivityMain extends AppCompatActivity implements SearchView.OnQueryTextListener,
         NavigationView.OnNavigationItemSelectedListener,
@@ -142,6 +146,10 @@ public class ActivityMain extends AppCompatActivity implements SearchView.OnQuer
         Iconics.init(this);
 
         super.onCreate(savedInstanceState);
+
+        AudienceNetworkAds.initialize(this);
+        new Native_Ad_Service(this);
+        Native_Ad_Service.loadNativeAd();
 
         if (sharedPref == null) {
             PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
@@ -303,8 +311,17 @@ public class ActivityMain extends AppCompatActivity implements SearchView.OnQuer
         setupStartUpFragment();
     }
 
+    public static void refreshNativeAd(Activity activity) {
+        if (Native_Ad_Service.radioPlayClicked()) {
+            new Native_Ad_Service(activity);
+            Native_Ad_Service.loadNativeAd();
+        }
+    }
+
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
+        //just to show interstitial ads
+        Interstitial_Ad_Service.primaryButtonClick();
         // If menuItem == null method was executed manually
         if (menuItem != null)
             selectedMenuItem = menuItem.getItemId();
@@ -511,7 +528,7 @@ public class ActivityMain extends AppCompatActivity implements SearchView.OnQuer
                 protected void onPostExecute(DataRadioStation station) {
                     if (!isFinishing()) {
                         if (station != null) {
-                            Utils.showPlaySelection(radioDroidApp, station, getSupportFragmentManager());
+                            Utils.showPlaySelection(ActivityMain.this, radioDroidApp, station, getSupportFragmentManager());
 
                             Fragment currentFragment = mFragmentManager.getFragments().get(mFragmentManager.getFragments().size() - 1);
                             if (currentFragment instanceof FragmentHistory) {
@@ -523,9 +540,9 @@ public class ActivityMain extends AppCompatActivity implements SearchView.OnQuer
             }.execute();
         } else {
             final String searchTag = extras.getString(EXTRA_SEARCH_TAG);
-            Log.d("MAIN","received search request for tag 1: "+searchTag);
+            Log.d("MAIN", "received search request for tag 1: " + searchTag);
             if (searchTag != null) {
-                Log.d("MAIN","received search request for tag 2: "+searchTag);
+                Log.d("MAIN", "received search request for tag 2: " + searchTag);
                 Search(StationsFilter.SearchStyle.ByTagExact, searchTag);
             }
         }
@@ -695,7 +712,7 @@ public class ActivityMain extends AppCompatActivity implements SearchView.OnQuer
             if (dialog instanceof SaveFileDialog) {
                 if (selectedMenuItem == R.id.nav_item_starred) {
                     favouriteManager.SaveM3U(file.getParent(), file.getName());
-                }else if (selectedMenuItem == R.id.nav_item_history) {
+                } else if (selectedMenuItem == R.id.nav_item_history) {
                     historyManager.SaveM3U(file.getParent(), file.getName());
                 }
             } else if (dialog instanceof OpenFileDialog) {

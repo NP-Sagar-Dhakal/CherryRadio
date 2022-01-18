@@ -447,7 +447,7 @@ public class FragmentPlayerFull extends Fragment {
         }
 
         if (station != null) {
-            Utils.showPlaySelection(radioDroidApp, station, getActivity().getSupportFragmentManager());
+            Utils.showPlaySelection(requireActivity(), radioDroidApp, station, getActivity().getSupportFragmentManager());
         }
     }
 

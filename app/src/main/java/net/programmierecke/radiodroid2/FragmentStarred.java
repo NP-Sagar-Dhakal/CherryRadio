@@ -55,7 +55,7 @@ public class FragmentStarred extends Fragment implements IAdapterRefreshable, Ob
 
     void onStationClick(DataRadioStation theStation) {
         RadioDroidApp radioDroidApp = (RadioDroidApp) getActivity().getApplication();
-        Utils.showPlaySelection(radioDroidApp, theStation, getActivity().getSupportFragmentManager());
+        Utils.showPlaySelection(requireActivity(), radioDroidApp, theStation, getActivity().getSupportFragmentManager());
     }
 
     public void RefreshListGui() {

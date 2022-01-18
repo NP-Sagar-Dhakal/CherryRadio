@@ -61,7 +61,7 @@
         <item name="android:windowBackground">@color/windowBackgroundDark</item>
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
         <item name="colorPrimary">@color/colorPrimaryDark</item>
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">#DCDCDA</item>
         <item name="colorAccent">@color/colorAccentDark</item>
 
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>

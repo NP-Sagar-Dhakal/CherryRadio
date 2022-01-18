@@ -323,7 +323,7 @@ public class Utils {
         playerSelectorDialogFragment.show(fragmentManager, PlayerSelectorDialog.FRAGMENT_TAG);
     }
 
-    public static void showPlaySelection(final RadioDroidApp radioDroidApp, final DataRadioStation station, final FragmentManager fragmentManager) {
+    public static void showPlaySelection(Activity activity,final RadioDroidApp radioDroidApp, final DataRadioStation station, final FragmentManager fragmentManager) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(radioDroidApp);
         final boolean externalAvailable = sharedPref.getBoolean("play_external", false);
 
@@ -342,6 +342,9 @@ public class Utils {
         } else {
             playAndWarnIfMetered(radioDroidApp, station, PlayerType.RADIODROID, () -> play(radioDroidApp, station));
         }
+
+        //refreshing native ad
+        ActivityMain.refreshNativeAd(activity);
     }
 
     public static void playAndWarnIfMetered(RadioDroidApp radioDroidApp, DataRadioStation station, PlayerType playerType, Runnable playFunc) {

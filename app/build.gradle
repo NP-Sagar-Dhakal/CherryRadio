@@ -111,18 +111,27 @@ android {
             resValue "string", "COUNTRY_CODE", "bd"
             resValue "string", "AUTH", AUTH + ".bangladesh"
             applicationId AUTH + ".bangladesh"
+            resValue 'string', 'app_name', 'Bagladesh Radio'
+            resValue 'string', 'native_ad', ''
+            resValue 'string', 'interstitial_ad', ''
         }
         nepal {
             dimension "country"
             resValue "string", "COUNTRY_CODE", "np"
             resValue "string", "AUTH", AUTH + ".nepal"
             applicationId AUTH + ".nepal"
+            resValue 'string', 'app_name', 'Nepal Radio'
+            resValue 'string', 'native_ad', ''
+            resValue 'string', 'interstitial_ad', ''
         }
         india {
             dimension "country"
             resValue "string", "COUNTRY_CODE", "in"
             resValue "string", "AUTH", AUTH + ".india"
             applicationId AUTH + ".india"
+            resValue 'string', 'app_name', 'India Radio'
+            resValue 'string', 'native_ad', ''
+            resValue 'string', 'interstitial_ad', ''
         }
     }
 

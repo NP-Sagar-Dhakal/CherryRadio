@@ -51,7 +51,7 @@ public class FragmentStations extends FragmentBase implements IFragmentSearchabl
 
     void onStationClick(DataRadioStation theStation, int pos) {
         RadioDroidApp radioDroidApp = (RadioDroidApp) getActivity().getApplication();
-        Utils.showPlaySelection(radioDroidApp, theStation, getActivity().getSupportFragmentManager());
+        Utils.showPlaySelection(requireActivity(), radioDroidApp, theStation, getActivity().getSupportFragmentManager());
     }
 
     @Override

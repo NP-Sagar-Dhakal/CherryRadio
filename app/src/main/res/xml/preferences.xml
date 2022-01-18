@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/nav_item_settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:search="http://schemas.android.com/apk/com.bytehamster.lib.preferencesearch"
     android:key="pref_toplevel"
-    xmlns:search="http://schemas.android.com/apk/com.bytehamster.lib.preferencesearch">
+    android:title="@string/nav_item_settings">
 
     <com.bytehamster.lib.preferencesearch.SearchPreference android:key="searchPreference" />
 
-    <Preference android:title="New Station"
-        android:key="add_new_station"/>
-
     <PreferenceScreen
+        android:key="pref_category_ui"
         android:title="@string/settings_appearance"
-        search:ignore="true"
-        android:key="pref_category_ui">
+        search:ignore="true">
 
         <ListPreference
             android:defaultValue="@string/theme_light"
             android:entries="@array/theme_entries"
             android:entryValues="@array/theme_values"
             android:key="theme_name"
+            android:summary="%s"
             android:title="@string/settings_theme_selection_title"
-            search:summary=""
-            android:summary="%s" />
+            search:summary="" />
 
         <CheckBoxPreference
             android:defaultValue="true"
@@ -36,16 +34,17 @@
             android:title="@string/settings_compact_style" />
 
         <CheckBoxPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="bottom_navigation"
-            android:title="@string/settings_bottom_navigation" />
+            android:title="@string/settings_bottom_navigation"
+            app:isPreferenceVisible="false" />
 
     </PreferenceScreen>
 
     <PreferenceScreen
+        android:key="pref_category_startup"
         android:title="@string/settings_startup_behaviour"
-        search:ignore="true"
-        android:key="pref_category_startup">
+        search:ignore="true">
 
         <ListPreference
             android:defaultValue="@string/startup_show_history"
@@ -53,8 +52,8 @@
             android:entryValues="@array/startup_action_entryvalues"
             android:key="startup_action"
             android:summary="@string/startup_action_title_desc"
-            search:summary=""
-            android:title="@string/startup_action_title" />
+            android:title="@string/startup_action_title"
+            search:summary="" />
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -66,9 +65,9 @@
     </PreferenceScreen>
 
     <PreferenceScreen
+        android:key="pref_category_interaction"
         android:title="@string/settings_interaction"
-        search:ignore="true"
-        android:key="pref_category_interaction">
+        search:ignore="true">
 
         <CheckBoxPreference
             android:defaultValue="true"
@@ -116,9 +115,9 @@
     </PreferenceScreen>
 
     <PreferenceScreen
+        android:key="pref_category_player"
         android:title="@string/settings_play"
-        search:ignore="true"
-        android:key="pref_category_player">
+        search:ignore="true">
 
         <CheckBoxPreference
             android:disableDependentsState="true"
@@ -159,9 +158,9 @@
     </PreferenceScreen>
 
     <PreferenceScreen
+        android:key="pref_category_alarm"
         android:title="@string/settings_alarm"
-        search:ignore="true"
-        android:key="pref_category_alarm">
+        search:ignore="true">
 
         <CheckBoxPreference
             android:disableDependentsState="true"
@@ -182,88 +181,88 @@
             android:entryValues="@array/timeout_minutes_values"
             android:key="alarm_timeout"
             android:summary="@string/settings_alarm_sleep_timer_desc"
-            search:summary=""
-            android:title="@string/settings_alarm_sleep_timer" />
+            android:title="@string/settings_alarm_sleep_timer"
+            search:summary="" />
 
     </PreferenceScreen>
 
     <PreferenceScreen
+        android:key="pref_category_recordings"
         android:title="@string/settings_recordings"
-        search:ignore="true"
-        android:key="pref_category_recordings">
+        search:ignore="true">
         <ListPreference
             android:defaultValue="@string/settings_record_name_formatting_default"
             android:entries="@array/settings_record_name_formatting_list_display"
             android:entryValues="@array/settings_record_name_formatting_list"
             android:key="record_name_formatting"
             android:summary="%s"
-            search:summary=""
-            android:title="@string/settings_record_name_formatting" />
+            android:title="@string/settings_record_name_formatting"
+            search:summary="" />
     </PreferenceScreen>
 
     <PreferenceScreen
+        android:key="pref_category_mpd"
         android:title="@string/settings_mpd"
-        search:ignore="true"
-        android:key="pref_category_mpd">
+        search:ignore="true">
         <Preference
             android:key="mpd_servers_viewer"
             android:title="@string/settings_view_mpd_servers" />
     </PreferenceScreen>
 
     <PreferenceScreen
-        search:ignore="true"
         android:key="pref_category_connectivity"
-        android:title="@string/settings_connectivity">
+        android:title="@string/settings_connectivity"
+        search:ignore="true">
 
         <net.programmierecke.radiodroid2.views.IntEditTextPreference
             android:defaultValue="5"
             android:key="stream_connect_timeout"
             android:maxLength="2"
             android:summary="@string/settings_seconds_format"
-            search:summary=""
-            android:title="@string/settings_connect_timeout" />
+            android:title="@string/settings_connect_timeout"
+            search:summary="" />
         <net.programmierecke.radiodroid2.views.IntEditTextPreference
             android:defaultValue="10"
             android:key="stream_read_timeout"
             android:maxLength="2"
             android:summary="@string/settings_seconds_format"
-            search:summary=""
-            android:title="@string/settings_read_timeout" />
+            android:title="@string/settings_read_timeout"
+            search:summary="" />
         <net.programmierecke.radiodroid2.views.IntEditTextPreference
             android:defaultValue="10"
             android:key="settings_retry_timeout"
             android:maxLength="2"
             android:summary="@string/settings_seconds_format"
-            search:summary=""
-            android:title="@string/settings_retry_timeout" />
+            android:title="@string/settings_retry_timeout"
+            search:summary="" />
         <net.programmierecke.radiodroid2.views.IntEditTextPreference
             android:defaultValue="100"
             android:key="settings_retry_delay"
             android:maxLength="8"
             android:summary="@string/settings_milliseconds_format"
-            search:summary=""
-            android:title="@string/settings_retry_delay" />
+            android:title="@string/settings_retry_delay"
+            search:summary="" />
         <net.programmierecke.radiodroid2.views.IntEditTextPreference
             android:defaultValue="60"
             android:key="settings_resume_within"
             android:maxLength="3"
             android:summary="@string/settings_seconds_format"
-            search:summary=""
-            android:title="@string/settings_resume_timeout" />
+            android:title="@string/settings_resume_timeout"
+            search:summary="" />
         <Preference
             android:key="settings_proxy"
             android:title="@string/settings_proxy" />
     </PreferenceScreen>
 
     <PreferenceScreen
+        android:key="pref_category_other"
         android:title="@string/settings_other"
-        search:ignore="true"
-        android:key="pref_category_other">
+        search:ignore="true">
 
         <EditTextPreference
             android:key="last_fm_api_key"
-            android:title="@string/settings_lastfm_api_key"
-            android:summary="@string/settings_lastfm_api_key_desc" />
+            android:summary="@string/settings_lastfm_api_key_desc"
+            android:title="@string/settings_lastfm_api_key" />
 
         <Preference
             android:key="show_statistics"

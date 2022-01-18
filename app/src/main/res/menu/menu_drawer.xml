@@ -31,4 +31,13 @@
             android:icon="@drawable/ic_tune_24dp"
             android:title="@string/nav_item_settings" />
     </group>
+
+    <group
+        android:id="@+id/add_station"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/add_new_station"
+            android:icon="@drawable/ic_baseline_add_24"
+            android:title="Add New Station" />
+    </group>
 </menu>

@@ -9,6 +9,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -148,7 +149,6 @@ public class ActivityMain extends AppCompatActivity implements SearchView.OnQuer
         }
         setTheme(Utils.getThemeResId(this));
         setContentView(R.layout.layout_main);
-
         try {
             File dir = new File(getFilesDir().getAbsolutePath());
             if (dir.isDirectory()) {
@@ -336,6 +336,10 @@ public class ActivityMain extends AppCompatActivity implements SearchView.OnQuer
                 break;
             case R.id.nav_item_settings:
                 f = new FragmentSettings();
+                break;
+            case R.id.add_new_station:
+                f = new FragmentHistory();
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.radio-browser.info/add")));
                 break;
             default:
         }
@@ -637,6 +641,7 @@ public class ActivityMain extends AppCompatActivity implements SearchView.OnQuer
                 myToolbar.setTitle(R.string.nav_item_starred);
                 break;
             }
+            case R.id.add_new_station:
             case R.id.nav_item_history: {
                 menuItemSleepTimer.setVisible(true);
                 //menuItemSearch.setVisible(true);

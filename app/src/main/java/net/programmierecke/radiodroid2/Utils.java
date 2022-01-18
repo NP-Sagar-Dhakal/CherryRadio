@@ -496,7 +496,7 @@ public class Utils {
 
     public static boolean bottomNavigationEnabled(Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getBoolean("bottom_navigation", true);
+        return sharedPref.getBoolean("bottom_navigation", false);
     }
 
     public static String formatStringWithNamedArgs(String format, Map<String, String> args) {
